@@ -1,0 +1,591 @@
+luku = int(input("Anna luku: "))
+if (luku % 2) == 0:
+    print("Antamasi luku oli parillinen.")
+else:
+    print()
+________________
+
+name = str(input("Anna nimi: "))
+
+if (name == "Erkki"):
+    password = str(input("Anna salasana: "))
+    if (password == "Esimerkki"):
+        print("Salasana ja nimi oli oikein!")
+    else:
+        print("Salasana oli väärin.")
+else:
+    print("Nimi oli väärin.")
+________________
+
+kohde = int(input("Valitse kohde (1-3): "))
+
+if (kohde == 1):
+    print("Haukion kala Oy")
+elif (kohde == 2):
+    print("Metallipaja VasaraAika")
+elif (kohde == 3):
+    print("Balin palapelitehdas")
+________________
+
+luku1 = int(input("Anna luku: "))
+luku2 = int(input("Anna toinen luku: "))
+
+if (luku1 % 2) == 0 and (luku2 % 2) == 0:
+    print("Molemmat luvut ovat parillisia.")
+elif (luku1 % 2) == 1 and (luku2% 2) == 1:
+    print("Molemmat luvut ovat parittomia.")
+else:
+    print("Toinen luku on parillinen.")
+________________
+
+num1 = input('Anna ensimmäinen luku:')
+num2 = input('Anna toinen luku:')
+print("(1) +")
+print("(2) -")
+print("(3) *")
+print("(4) /")
+valinta = input("Tee valinta (1-4): ")
+if valinta == '1':
+    print("Tulos on:", int(num1) + int(num2))
+elif valinta == '2':
+    print("Tulos on:", int(num1) - int(num2))
+elif valinta == '3':
+    print("Tulos on:", int(num1) * int(num2))
+elif valinta == '4':
+    print("Tulos on:", int(num1) / int(num2))
+else:
+    print("Valintaa ei tunnistettu.")
+________________
+
+maxkierros = 5
+kierros = 0
+
+while kierros < maxkierros:
+    print("Olemme kierroksella", kierros)
+    kierros += 1
+________________
+
+while True:
+    syote = str(input("Kirjoita jotain: "))
+    if syote == "lopeta":
+        print("Lopetit ohjelman.")
+        break
+    else:
+        print(syote)
+________________
+
+n = input("Kuinka monta kierrosta?: ")
+n = int(n)
+sum = 0
+for num in range(0, n):
+    sum = sum+num
+print("Kertymäksi saatiin:", sum)
+________________
+
+num1 = input('Anna ensimmäinen luku: ')
+num2 = input('Anna toinen luku: ')
+
+while True:
+
+    print("(1) +")
+    print("(2) -")
+    print("(3) *")
+    print("(4) /")
+    print("(5) Vaihda luvut")
+    print("(6) Lopeta")
+
+    print("Valitut luvut: ", num1, num2)
+
+    valinta = input("Tee valinta (1-6): ")
+    if valinta == '1':
+        print("Tulos on:", int(num1) + int(num2))
+    elif valinta == '2':
+        print("Tulos on:", int(num1) - int(num2))
+    elif valinta == '3':
+        print("Tulos on:", int(num1) * int(num2))
+    elif valinta == '4':
+        print("Tulos on:", int(num1) / int(num2))
+    elif valinta == '5':
+        num1 = input('Anna uusi ensimmäinen luku: ')
+        num2 = input('Anna uusi toinen luku: ')
+        print("(1) +")
+        print("(2) -")
+        print("(3) *")
+        print("(4) /")
+        print("(5) Vaihda luvut")
+        print("(6) Lopeta")
+        print("Valitut luvut: ", num1, num2)
+        valinta = input("Tee valinta (1-6): ")
+        if valinta == '1':
+            print("Tulos on:", int(num1) + int(num2))
+        elif valinta == '2':
+            print("Tulos on:", int(num1) - int(num2))
+        elif valinta == '3':
+            print("Tulos on:", int(num1) * int(num2))
+        elif valinta == '4':
+            print("Tulos on:", int(num1) / int(num2))
+        elif valinta == '6':
+            break
+    elif valinta == '6':
+        break
+________________
+
+nimi = str(input("Minkä niminen tiedosto luodaan?: "))
+teksti = str(input("Mitä kirjoitetaan tiedostoon?: "))
+tiedosto = open(nimi, "w")
+
+tiedosto.write(teksti)
+tiedosto.close
+
+print("Luotiin tiedosto", tiedosto.name, "ja siihen tallennettiin teksti:", teksti)
+________________
+
+tiedosto = open("merkkijonoja.txt", "r")
+sisalto = tiedosto.readlines()
+
+for i in sisalto:
+    testattava = i.strip()
+    if (testattava.isalnum()):
+        print(testattava, "kelpaa salasanaksi.")
+    else:
+        print(testattava, "sisältää virheellisiä merkkejä.")
+
+tiedosto.close()
+________________
+
+print("(1) Lue muistikirjaa")
+print("(2) Lisää merkintä")
+print("(3) Tyhjennä muistikirja")
+print("(4) Lopeta")
+
+while True:
+    valinta = input("Mitä haluat tehdä?: ")
+
+    if valinta == '1':
+        tiedosto = open("muistio.txt", "r")
+        sisalto = tiedosto.readline()
+        print(sisalto)
+        tiedosto.close()
+        print("(1) Lue muistikirjaa")
+        print("(2) Lisää merkintä")
+        print("(3) Tyhjennä muistikirja")
+        print("(4) Lopeta")
+
+
+    elif valinta == '2':
+        tiedosto = open("muistio.txt", "a")
+        lisays = input("Kirjoita uusi merkintä: ")
+        tiedosto.write(lisays)
+        tiedosto.close()
+        print("(1) Lue muistikirjaa")
+        print("(2) Lisää merkintä")
+        print("(3) Tyhjennä muistikirja")
+        print("(4) Lopeta")
+
+    elif valinta == '3':
+       tiedosto = open("muistio.txt", "w")
+       tiedosto.close()
+       print("Muistio tyhjennetty.")
+       print("(1) Lue muistikirjaa")
+       print("(2) Lisää merkintä")
+       print("(3) Tyhjennä muistikirja")
+       print("(4) Lopeta")
+
+    elif valinta == '4':
+        print("Lopetetaan.")
+        break
+
+    else:
+        print("Tuntematon valinta")
+        break
+________________
+
+def tulostaja():
+    print("Tulostusfunktio!")
+
+def main():
+    tulostaja()
+
+if __name__ == "__main__":
+    main()
+________________
+
+def toinenpotenssi(tulos):
+    tulos = tulos ** 2
+    return tulos
+
+def main():
+    tulos = int(input("Anna lukuarvo: "))
+    tulos = toinenpotenssi(tulos)
+    print("Toinen potenssi on ", tulos)
+
+if __name__ == "__main__":
+      main()
+________________
+
+def tulostaja(merkkijono = "Oletustulostus"):
+    print(merkkijono)
+
+def main():
+
+    while True:
+        merkkijono = str(input("Anna syöte (Lopeta lopettaa): "))
+        if len(merkkijono) < 5:
+            tulostaja()
+        elif merkkijono == "Lopeta":
+            break
+        else:
+            tulostaja(merkkijono)
+
+if __name__ == "__main__":
+    main()
+________________
+
+def pituusmitta(pituus):
+    pituus = (len(pituus))
+    return(int)
+
+
+def main():
+
+    while True:
+        pituus = str(input("Anna syöte (Lopeta lopettaa): "))
+        if len(pituus) == 0:
+            print("Et antanut syötettä")
+        elif pituus == "Lopeta":
+            break
+        else:
+            pituusmitta(pituus)
+            print("Antamasi syöte oli", len(pituus), "merkkiä pitkä.")
+
+if __name__ == "__main__":
+    main()
+________________
+
+import random
+numerot = []
+print("Heitetään kolikkoa viidesti:")
+while True:
+    if len(numerot) == 5:
+        break
+    luku = random.randint(0,1)
+    if luku == 0:
+        print("Klaava!")
+    elif luku == 1:
+        print("Kruuna!")
+    numerot.append(luku)
+numerot.sort()
+________________
+
+def tulosta(syote):
+
+    print("Saatiin syöte:", syote)
+    print("Syötteen pituus on", len(syote), "merkkiä.")
+________________
+
+def testaa(testattava):
+
+    if len(testattava) < 5 or testattava.isnumeric() or testattava.isalpha():
+        return False
+    else:
+        return True
+________________
+
+import math
+
+num1 = input('Anna ensimmäinen luku: ')
+num2 = input('Anna toinen luku: ')
+
+while True:
+
+    print("(1) +")
+    print("(2) -")
+    print("(3) *")
+    print("(4) /")
+    print("(5) sin(luku1/luku2)")
+    print("(6) cos(luku1/luku2)")
+    print("(7) Vaihda luvut")
+    print("(8) Lopeta")
+    print("Valitut luvut: ", num1, num2)
+
+    valinta = input("Tee valinta (1-8): ")
+    if valinta == '1':
+        print("Tulos on:", int(num1) + int(num2))
+    elif valinta == '2':
+        print("Tulos on:", int(num1) - int(num2))
+    elif valinta == '3':
+        print("Tulos on:", int(num1) * int(num2))
+    elif valinta == '4':
+        print("Tulos on:", int(num1) / int(num2))
+    elif valinta == '5':
+        print("Tulos on:", math.sin(int(num1)/(int(num2))))
+    elif valinta == '6':
+        print("Tulos on:", math.cos(int(num1)/(int(num2))))
+    elif valinta == '7':
+        num1 = input('Anna uusi ensimmäinen luku: ')
+        num2 = input('Anna uusi toinen luku: ')
+        print("(1) +")
+        print("(2) -")
+        print("(3) *")
+        print("(4) /")
+        print("(5) sin(luku1/luku2)")
+        print("(6) cos(luku1/luku2)")
+        print("(7) Vaihda luvut")
+        print("(8) Lopeta")
+        print("Valitut luvut: ", num1, num2)
+        valinta = input("Tee valinta (1-8): ")
+        if valinta == '1':
+            print("Tulos on:", int(num1) + int(num2))
+        elif valinta == '2':
+            print("Tulos on:", int(num1) - int(num2))
+        elif valinta == '3':
+            print("Tulos on:", int(num1) * int(num2))
+        elif valinta == '4':
+            print("Tulos on:", int(num1) / int(num2))
+        elif valinta == '5':
+            print("Tulos on:", math.sin(int(num1)/(int(num2))))
+        elif valinta == '6':
+            print("Tulos on:", math.cos(int(num1)/(int(num2))))
+        elif valinta == '8':
+            break
+    elif valinta == '8':
+        break
+________________
+
+import time
+
+print("(1) Lue muistikirjaa")
+print("(2) Lisää merkintä")
+print("(3) Tyhjennä muistikirja")
+print("(4) Lopeta")
+
+while True:
+    valinta = input("Mitä haluat tehdä?: ")
+
+    if valinta == '1':
+        tiedosto = open("muistio.txt", "r")
+        sisalto = tiedosto.readline()
+        if sisalto == "":
+            print()
+        else:
+            print(sisalto + ":::",time.strftime("%X %x"))
+        tiedosto.close()
+        print("(1) Lue muistikirjaa")
+        print("(2) Lisää merkintä")
+        print("(3) Tyhjennä muistikirja")
+        print("(4) Lopeta")
+
+
+    elif valinta == '2':
+        tiedosto = open("muistio.txt", "a")
+        lisays = input("Kirjoita uusi merkintä: ")
+        tiedosto.write(lisays)
+        tiedosto.close()
+        print("(1) Lue muistikirjaa")
+        print("(2) Lisää merkintä")
+        print("(3) Tyhjennä muistikirja")
+        print("(4) Lopeta")
+
+    elif valinta == '3':
+       tiedosto = open("muistio.txt", "w")
+       tiedosto.close()
+       print("Muistio tyhjennetty.")
+       print("(1) Lue muistikirjaa")
+       print("(2) Lisää merkintä")
+       print("(3) Tyhjennä muistikirja")
+       print("(4) Lopeta")
+
+    elif valinta == '4':
+        print("Lopetetaan.")
+        break
+
+    else:
+        print("Tuntematon valinta")
+        break
+________________
+
+luku = input("Anna luku: ")
+try:
+    luku = int(luku)
+    print("Syöte oli kelvollinen.")
+
+except Exception:
+    print("Virheellinen syöte!")
+________________
+
+import math
+
+def luvunpyytaja():
+      while True:
+          try:
+              lukuarvo = input("Anna luku: ")
+              lukuarvo = int(lukuarvo)
+              return lukuarvo
+          except Exception:
+              print("Virheellinen syöte!")
+
+def luvanpyytajakaks():
+    while True:
+        try:
+            lukuarvokaks = input("Anna luku: ")
+            lukuarvokaks = int(lukuarvokaks)
+            return lukuarvokaks
+        except Exception:
+            print("Virheellinen syöte!")
+
+def main():
+
+    ekaluku = luvunpyytaja()
+    tokaluku = luvunpyytaja()
+
+    while True:
+
+        print("(1) +")
+        print("(2) -")
+        print("(3) *")
+        print("(4) /")
+        print("(5) sin(luku1/luku2)")
+        print("(6) cos(luku1/luku2)")
+        print("(7) Vaihda luvut")
+        print("(8) Lopeta")
+        print("Valitut luvut: ", ekaluku, tokaluku)
+
+        valinta = input("Tee valinta (1-8): ")
+        if valinta == '1':
+            print("Tulos on:", ekaluku + tokaluku)
+        elif valinta == '2':
+            print("Tulos on:", ekaluku - tokaluku)
+        elif valinta == '3':
+            print("Tulos on:", ekaluku * tokaluku)
+        elif valinta == '4':
+            print("Tulos on:", ekaluku / tokaluku)
+        elif valinta == '5':
+            print("Tulos on:", math.sin(ekaluku)/math.sin(tokaluku))
+        elif valinta == '6':
+            print("Tulos on:", math.cos(ekaluku)/math.cos(tokaluku))
+
+        elif valinta == '7':
+
+            kolmasluku = luvanpyytajakaks()
+            neljasluku = luvanpyytajakaks()
+            print("(1) +")
+            print("(2) -")
+            print("(3) *")
+            print("(4) /")
+            print("(5) sin(luku1/luku2)")
+            print("(6) cos(luku1/luku2)")
+            print("(7) Vaihda luvut")
+            print("(8) Lopeta")
+            print("Valitut luvut: ", kolmasluku, neljasluku)
+
+            valinta = input("Tee valinta (1-8): ")
+            if valinta == '1':
+                print("Tulos on:", ekaluku + tokaluku)
+            elif valinta == '2':
+                print("Tulos on:", ekaluku - tokaluku)
+            elif valinta == '3':
+                print("Tulos on:", ekaluku * tokaluku)
+            elif valinta == '4':
+                print("Tulos on:", ekaluku / tokaluku)
+            elif valinta == '5':
+                print("Tulos on:", math.sin(ekaluku) / math.sin(tokaluku))
+            elif valinta == '6':
+                print("Tulos on:", math.cos(ekaluku) / math.cos(tokaluku))
+            elif valinta == '8':
+                break
+        elif valinta == '8':
+            break
+
+if __name__ == "__main__":
+    main()
+________________
+
+lista = ["Sininen", "Punainen", "Keltainen", "Vihreä"]
+print("Listan ensimmäinen alkio on:",lista[0])
+print("Lista tulostettuna alkio kerrallaan:")
+for i in lista:
+    print(i)
+________________
+
+lista = []
+while True:
+    print("Haluatko")
+    print("(1)Lisätä listaan")
+    print("(2)Poistaa listalta vai")
+    valinta = input("(3)Lopettaa?: ")
+
+    if valinta == '1':
+        lisays = input("Mitä lisätään?:")
+        lista.append(lisays)
+    elif valinta == '2':
+        listanmaara = len(lista)
+
+        print("Listalla on", listanmaara, "alkiota.")
+        poisto = int(input("Monesko niistä poistetaan?:"))
+        try:
+            lista.pop(poisto)
+        except IndexError:
+            print("Virheellinen valinta.")
+
+    elif valinta == '3':
+        print("Listalla oli tuotteet:")
+        for i in lista:
+            print(i)
+        break
+    else:
+        print("Virheellinen valinta.")
+________________
+
+lista = open("sanoja.txt", "r")
+sisalto = lista.readlines()
+sisalto.sort()
+print("Sanat laitettuna aakkosjärjestykseen:")
+for i in sisalto:
+    print(i, end='')
+lista.close()
+________________
+
+lista = [10,14,22,33,44,13,22,55,66,77]
+listakaks = []
+print("Supermarket")
+print("===========")
+while True:
+    valinta = input("Valitse tuote (1-10) 0 lopetus: ")
+
+    if valinta == '1':
+        listakaks.append(10)
+        print("Tuote: 1 Hinta: 10")
+    elif valinta == '2':
+        listakaks.append(14)
+        print("Tuote: 2 Hinta: 14")
+    elif valinta == '3':
+        listakaks.append(22)
+        print("Tuote: 3 Hinta: 22")
+    elif valinta == '4':
+        listakaks.append(33)
+        print("Tuote: 4 Hinta: 33")
+    elif valinta == '5':
+        listakaks.append(44)
+        print("Tuote: 5 Hinta: 44")
+    elif valinta == '6':
+        listakaks.append(13)
+        print("Tuote: 6 Hinta: 13")
+    elif valinta == '7':
+        listakaks.append(22)
+        print("Tuote: 7 Hinta: 22")
+    elif valinta == '8':
+        listakaks.append(55)
+        print("Tuote: 8 Hinta: 55")
+    elif valinta == '9':
+        listakaks.append(66)
+        print("Tuote: 9 Hinta: 66")
+    elif valinta == '10':
+        listakaks.append(77)
+        print("Tuote: 10 Hinta: 77")
+    elif valinta == '0':
+        sum = sum(listakaks)
+        print("Yhteensä: ",sum)
+        maksu = int(input("Maksu:"))
+        print("Vaihto:",maksu - sum)
+        break
+________________
