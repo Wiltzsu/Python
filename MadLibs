@@ -1,58 +1,59 @@
 # MadLibs game with 5 different stories
 # User gets a random story to fill in the blanks
-# The story is presented in parts one sentence at a time and presented fully after the blanks have been filled
+# The story is presented in parts one blank at a time and presented fully after the blanks have been filled
 
 def storyOne():
-    noun = input("He watched as the young man tried to impress everyone in the room with his (noun). : ")
-    adj = input("There was no doubt that he was (adjective). : ")
-    adjtwo = input("The fact that he was more (adjective) than anyone else in the room could have been easily deduced. : ")
-    adjthree = input("Nobody was really paying any attention due to the fact that it was also (adjective) : ")
-    nountwo = input("that the young man only cared about his (noun): ")
 
-    story = "\nYour story:\nHe watched as the young man tried to impress everyone in the room with his " + noun + ".\n" "There was no doubt that he was " + adj + "." " The fact that he was more " + adjtwo + " than anyone \nelse in the room could have been easily deduced. Nobody was really paying any \nattention due to the fact that it was also " + adjthree + " that the young man only cared about his " + nountwo +".\n"
+    n1 = input("He watched as the young man tried to impress everyone in the room with his (noun). : ")
+    a1 = input("There was no doubt that he was (adjective). : ")
+    a2 = input("The fact that he was more (adjective) than anyone else in the room could have been easily deduced. : ")
+    a3 = input("Nobody was really paying any attention due to the fact that it was also (adjective) : ")
+    n2 = input("that the young man only cared about his (noun): ")
+
+    story = "\nYour story:\nHe watched as the young man tried to impress everyone in the room with his " + n1 + ".\n" "There was no doubt that he was " + a1 + "." " The fact that he was more " + a2 + " than anyone \nelse in the room could have been easily deduced. Nobody was really paying any \nattention due to the fact that it was also " + a3 + " that the young man only cared about his " + n2 +".\n"
     return story
 
 def storyTwo():
-    noun = input("She didn't like the (noun). : ")
-    nou = input("She never did. She made the usual (noun) and started the tantrum he knew was coming. : ")
-    nnoun = input("But this time was (noun). : ")
-    nountwo = input("Instead of trying to placate her and her unreasonable (noun), : ")
-    nounthree = input("he just stared at her and watched her (noun) without saying a word. : ")
+    n1 = input("She didn't like the (noun). : ")
+    n2 = input("She never did. She made the usual (noun) and started the tantrum he knew was coming. : ")
+    n3 = input("But this time was (noun). : ")
+    n4 = input("Instead of trying to placate her and her unreasonable (noun), : ")
+    n5 = input("he just stared at her and watched her (noun) without saying a word. : ")
 
-    story = "\nYour story:\nShe didn't like the " + noun + "." " She never did. She made the usual " + nou + " and started the tantrum he knew was coming. " "\nBut this time was" + nnoun + "." " Instead of trying to placate her and her unreasonable " + nountwo +"," " he just stared at her and \nwatched her " + nounthree + " without saying a word.\n"
+    story = "\nYour story:\nShe didn't like the " + n1 + "." " She never did. She made the usual " + n2 + " and started the tantrum he knew was coming. " "\nBut this time was" + n3 + "." " Instead of trying to placate her and her unreasonable " + n4 +"," " he just stared at her and \nwatched her " + n5 + " without saying a word.\n"
     return story
 
 def storyThree():
-    noun = input("Pink ponies and purple giraffes roamed the (noun). : ")
-    nou =  input("(Noun) grew from the ground as a chocolate river meandered off to the side. : ")
-    nountwo = input("What looked like stones in the pasture were actually (noun). : ")
-    nounthree = input("Everything in her dream seemed to be perfect except for the fact that she had no (noun). : ")
+    n1 = input("Pink ponies and purple giraffes roamed the (noun). : ")
+    n2 =  input("(Noun) grew from the ground as a chocolate river meandered off to the side. : ")
+    n3 = input("What looked like stones in the pasture were actually (noun). : ")
+    n4 = input("Everything in her dream seemed to be perfect except for the fact that she had no (noun). : ")
 
-    story = "\nYour story:\nPink ponies and purple giraffes roamed the" + noun +". " + nou + " grew from\nthe ground as a chocolate river meandered off to the side." " What looked like stones\nin the pasture were actually" + nountwo +"." " Everything in her dream seemed to be perfect\nexcept for the fact that she had no " + nounthree +".\n"
+    story = "\nYour story:\nPink ponies and purple giraffes roamed the" + n1 +". " + n2 + " grew from\nthe ground as a chocolate river meandered off to the side." " What looked like stones\nin the pasture were actually" + n3 +"." " Everything in her dream seemed to be perfect\nexcept for the fact that she had no " + n4 +".\n"
     return story
 
 def storyFour():
-    noun = input("The (noun) sat silently in the corner of the room. : ")
-    verb = input("Nobody could remember the last time it had been (verb). : ")
-    nountwo = input("The little girl walked up to it and hit a few of the (noun). : ")
-    nounthree = input("The sound of the (noun) rang throughout the house for the first time in years. : ")
-    nounfour = input("In the upstairs room, confined to her bed, the owner of the house had (noun) in her eyes. : ")
+    n1 = input("The (noun) sat silently in the corner of the room. : ")
+    v1 = input("Nobody could remember the last time it had been (verb). : ")
+    n2 = input("The little girl walked up to it and hit a few of the (noun). : ")
+    n3 = input("The sound of the (noun) rang throughout the house for the first time in years. : ")
+    n4 = input("In the upstairs room, confined to her bed, the owner of the house had (noun) in her eyes. : ")
 
-    story = "\nYour story:\nThe " + noun + " sat silently in the corner of the room." " Nobody could remember the last time it had been " + verb +".\n" "The little girl walked up to it and hit a few of the " + nountwo +"." "The sound of the " + nounthree + " rang throughout the house for the\nfirst time in years." " In the upstairs room, confined to her bed, the owner of the house had "  + nounfour + "\nin her eyes.\n"
+    story = "\nYour story:\nThe " + n1 + " sat silently in the corner of the room." " Nobody could remember the last time it had been " + v1 +".\n" "The little girl walked up to it and hit a few of the " + n2 +"." "The sound of the " + n3 + " rang throughout the house for the\nfirst time in years." " In the upstairs room, confined to her bed, the owner of the house had "  + n4 + "\nin her eyes.\n"
     return story
 
 def storyFive():
-    noun = input("She glanced up into the sky to watch the clouds taking shape. First, she saw a (noun). : ")
-    nountwo = input("Next, it was an (noun). : ")
-    nounthree = input("Finally, she saw a giant (noun) and at that moment the rain began to pour. : ")
+    n1 = input("She glanced up into the sky to watch the clouds taking shape. First, she saw a (noun). : ")
+    n2 = input("Next, it was an (noun). : ")
+    n3 = input("Finally, she saw a giant (noun) and at that moment the rain began to pour. : ")
 
-    story = "\nYour story:\nShe glanced up into the sky to watch the clouds taking shape. First, she saw a " + noun +"." " Next, it was an " + nountwo +"." "\nFinally, she saw a giant" + nounthree + " and at that moment the rain began to pour.\n"
+    story = "\nYour story:\nShe glanced up into the sky to watch the clouds taking shape. First, she saw a " + n1 +"." " Next, it was an " + n2 +"." "\nFinally, she saw a giant" + n3 + " and at that moment the rain began to pour.\n"
     return story
 
 print("Welcome to MadLibs!")
 print("MadLibs is a game where you fill in the blanks and create your own funny stories.\nThis program will give you five stories to choose from and print the story for you.")
 
-def luvanpyytaja():
+def luvunpyytaja():
 
     while True:
 
@@ -65,7 +66,7 @@ def luvanpyytaja():
 
 def main():
 
-    luvanpyytaja()
+    luvunpyytaja()
 
     while True:
         choice = input("Choose a story with numbers 1-5 or press 'q' to quit: ")
@@ -85,3 +86,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
