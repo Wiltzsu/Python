@@ -1,0 +1,24 @@
+# a game where the program creates a random number from 0-10
+# the player has 4 tries to guess the right number
+# the program lets the user know if the number is smaller or bigger that the guessed number
+
+import random
+
+x = random.randint(0, 10)
+attempts = 0
+
+while attempts < 4:
+    attempts = attempts + 1
+    guess = int(input("Guess the number: "))
+
+    if attempts == 4:
+        print("Sorry, you ran out of attempts!")
+        break
+
+    if guess > x:
+        print("Number is smaller. You have", 4 - attempts, "attempts left.")
+    elif guess < x:
+        print("Number is bigger. You have", 4 - attempts, "attempts left.")
+    elif guess == x:
+        print("Correct! You made it with", attempts, "attempt(s)!")
+        break
