@@ -1,24 +1,45 @@
-# a game where the program creates a random number from 0-10
+# a game where the program generates a random number between 0-10
 # the player has 4 tries to guess the right number
 # the program lets the user know if the number is smaller or bigger that the guessed number
 
 import random
 
-x = random.randint(0, 10)
-attempts = 0
+print("Welcome to Number Guessing!\nThe program will generate a random number between 0-10.\nYou have 4 attempts to guess the right number.\n")
 
-while attempts < 4:
-    attempts = attempts + 1
-    guess = int(input("Guess the number: "))
+def number_guessing():
 
-    if attempts == 4:
-        print("Sorry, you ran out of attempts!")
+    attempts = 0
+
+    while True:
+        number = random.randint(0, 10)
         break
 
-    if guess > x:
-        print("Number is smaller. You have", 4 - attempts, "attempts left.")
-    elif guess < x:
-        print("Number is bigger. You have", 4 - attempts, "attempts left.")
-    elif guess == x:
-        print("Correct! You made it with", attempts, "attempt(s)!")
-        break
+    while True:
+        try:
+            while attempts < 4:
+                guess = int(input("Guess the number: "))
+                attempts += 1
+
+                if attempts == 4 and guess != number:
+                    print("Sorry, you are out of attempts.")
+                    return number_guessing() if input("Play again? Press 'y' to play again or any key to quit ") == 'y' else 0
+
+                if number == guess:
+                    print("Correct! You used", attempts, "attempts!")
+                    return number_guessing() if input("Play again? Press 'Y' to play again or any key to quit ") == 'y' else 0
+                elif number > guess:
+                    print("The number is bigger. You have", 4 - attempts, "attempts left.")
+                elif number < guess:
+                    print("The number is smaller. You have", 4- attempts, "attempts left.")
+
+                else:
+                    print("Your number is out of range.")
+
+        except ValueError:
+            print("Must be a integer value.")
+
+def main():
+    number_guessing()
+
+if __name__ == '__main__':
+    main()
