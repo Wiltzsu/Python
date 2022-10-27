@@ -21,7 +21,7 @@ def number_guessing():
                 attempts += 1
 
                 if attempts == 4 and guess != number:
-                    print("Sorry, you are out of attempts.")
+                    print("Sorry, you are out of attempts. The right number was {}.".format(number))
                     return number_guessing() if input("Play again? Press 'y' to play again or any key to quit ") == 'y' else 0
 
                 if number == guess:
